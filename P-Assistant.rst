@@ -67,7 +67,7 @@ Systemübersicht
 
 .. image:: images/dusty.jpg
    :class: inline
-   :width: 160px
+   :width: 240px
 
 .. note::
 
@@ -355,7 +355,7 @@ Node-Red
 Grafana
 -------
 
-* Sensorenwerte und Zustände zusätzlich in InnoDb gespeichert
+* Sensorenwerte und Zustände zusätzlich in InfluxDB gespeichert
 
   * Optimierte Aufbewahrung in Zeitreihendatenbank
 
@@ -372,22 +372,10 @@ Grafana
 
 .. note::
 
-    * Adblocker über DNS
-
-      * DNS: google.de auflösen -> 216.58.207.131 -> Anfrage zu IP
-
-    * Anfragen an verschiedene öffentliche DNS Provider
-
-      * Streuung der Anfragen falls gewünscht
-      * Ausfallsicherheit für Namensauflösung
-
-    * Unterstützung für DNS-over-TLS und DNS-over-HTTPS    
-
     Zeigen:
 
-    * Allgemeine Settings
-    * Filterliste
-    * DNS Settings
+    * Klima
+    * Netzwerk (Zeit ändern)
 
    -Strg-W zurück
 
