@@ -93,13 +93,13 @@ img {
 }
 
 .step {
-    width: 1600px;
+    width: 1800px;
 }
 
 img {
     float: right;
     clear: right;
-    max-width: 45%;
+    max-width: 50%;
     margin-left: 16px;
     vertical-align: middle;
 }
@@ -112,10 +112,21 @@ tt {
     font-family: Monaco, monospace;
 }
 
-#deal-with-it img {
-    margin-bottom: 8px;
+.fullscreen-image-class img {
+    float: none;
+    clear: both;
+    max-width: 90%;
+    margin: auto;
+    display: block;
 }
 
-#areas img {
-    max-width: 55%
+img.big {
+    max-width: 65%;
+}
+
+img.inline {
+    display: inline-block;
+    float: none;
+    clear: none;
+    margin: 4px;
 }

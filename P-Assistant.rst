@@ -1,248 +1,425 @@
 :css: style.css
 
-.. title:: PixelFlut Challenge
-
-----
-
-:data-x: 0
-:data-y: 0
-:data-scale: 1
-
-.. image:: images/pixelflut.png
-
-PixelFlut Challenge
-===================
-
-Markus Pöschl & Tobias Schaffner
+.. title:: P-Assistant
 
 ----
 
 :data-x: r2400
-:data-y: 0
 
-.. image:: images/PG_Logo_Web.png
-   :height: 260px
+.. image:: images/favicon.png
 
-Sponsor
--------
+P-Assistant
+===========
 
-PIXEL Group GmbH
+Eine kleine Einführung in mein Home Assistant Setup
 
-Simon Ashdown
+Markus Pöschl
 
 ----
 
-.. image:: images/menu.png
+.. image:: images/tldr.jpg
 
-Important things first
-----------------------
+Agenda
+------
 
-* Schnitzel will arive at about 8:30 PM.
-* Drinks and snacks in the kitchen.
+* Übersicht über das System
+* Live Walkthrough
 
-We also have vegetarians covered. ;)
+  * Lovelace Oberfläche
+  * Home Assistant Addons
 
-----
-
-.. image:: images/flut_screen.jpg
-
-What is PixelFlut?
-------------------
-
-* A digital canvas
-* The pixels can be sent and retreived by everybody connected to the server
+      * AdGuard Home
+      * Node-Red
+      * Grafana
+      * Home Assistant Git Exporter
 
 ----
 
-.. image:: images/knowledge.jpg
+.. image:: images/P-Assistant-1.svg
+   :class: big
 
-What is this evening about
---------------------------
+Home Assistant
+--------------
 
-1. One 4k PixelFlut Server
-2. Five challanges
-3. Try to solve the challanges faster than the other teams with the language you like
-4. ...
-5. Profit (Reward)
+* Rasperry Pi 4
+* MQTT und weitere Dienste als Addons
 
-----
+.. note::
 
-.. image:: images/tcp.jpg
+  Addons:
 
-API
----
-
-``\n`` terminated ASCII commands over TCP
-
-* ``SIZE`` - Returns the size of the visible canvas
-* ``PX <x> <y>`` - Return the current color of a pixel
-* ``PX <x> <y> <rrggbb>`` - Set the color of a pixel
-
-https://github.com/defnull/pixelflut
-
-----
-
-.. image:: images/challenge.jpg
-
-Challenges
-----------
-
-1. Color Spectrum
-2. Pacman
-3. Minified Maze
-4. "Deal with it"
-5. Solve the maze
+  * MQTT
+  * Node-Red
+  * Syncthing ...
 
 ----
 
 :data-x: r0
-:data-y: r1000
+:data-y: r1200
 
-.. image:: images/rgb.png
+.. image:: images/P-Assistant-2.svg
+   :class: big
 
-Color Spectrum
---------------
+Systemübersicht
+---------------
 
-* Draw the color spectrum of the RGB range
-* Rotate it
+* XIAOMI Roborock S55
 
-----
+.. image:: images/dusty.jpg
+   :class: inline
+   :width: 160px
 
-.. image:: images/pacman.png
+.. note::
 
-Pacman
-------
-
-* Draw a pacman that opens and closes its mouth
-* Every second time it open the mouth a yellow dot should be shown
+  * Erstes IoT Gerät: Roborock per MQTT
 
 ----
 
-.. image:: images/maze.png
+.. image:: images/P-Assistant-3.svg
+   :class: big
 
-Minified Maze
--------------
+Systemübersicht
+---------------
 
-* Copy the maze from the middle of the screen.
-* Scale it to the size of your target area.
-* Solution should not be blurry!
+* Wifi Steckdosen
+
+.. image:: images/shelly_plug.jpg
+   :class: inline
+   :height: 140px
+
+.. image:: images/alfawise.jpg
+   :class: inline
+   :height: 140px
+
+* IR für Standlüfter
+
+.. image:: images/broadcom-ir.jpg
+   :class: inline
+   :width: 160px
+
+.. note::
+
+  * 2x Alfawise PE1004T (flashed, ESPHome)
+  * 2x Shelly Plug S (MQTT nativ, ohne Cloud)
+  * Für Standlüfter IR Sender (Fernbedienungsersatz)
 
 ----
 
-:id: deal-with-it
+.. image:: images/P-Assistant-4.svg
+   :class: big
 
-.. image:: images/troll.png
+Systemübersicht
+---------------
 
-.. image:: images/thug.jpg
-   :width: 120px
+* Unterputzschalter in Steckerleiste für Multimedia und Switch
 
-"Deal with it"
---------------
+.. image:: images/shelly-1.jpg
+   :class: inline
+   :width: 160px
 
-* Search a random (random) animal picture and draw it
-* Use the provided glasses .png
-* Animate them moving down to the eyes of the animal
-* Background has to be restored behind the moving animation
+* TV und Nintendo Switch auch eingebunden
+
+.. note::
+
+  * Shelly 1 (ESPHome) - testen
+  * Switch an/aus über Ping Präsenz
 
 ----
 
-.. image:: images/maze.png
+.. image:: images/P-Assistant-5.svg
+   :class: big
 
-Maze
+Systemübersicht
+---------------
+
+* 2 ESP8266 für LEDs und Klimamonitoring
+
+.. image:: images/esp.jpg
+   :class: inline
+   :height: 140px
+
+.. image:: images/leds.png
+   :class: inline
+   :height: 140px
+
+.. image:: images/dht21.jpg
+   :class: inline
+   :height: 140px
+
+
+.. note::
+
+  * 2x ESP8266 (Node-MCU Dev Board)
+
+    * Sideboard Leds: addressierbare LEDs + Temperature / Luftfeuchte Sensor
+    * Vitrine: Leds zur Glasbodenbeleuchtung
+
 ----
 
-* Solve the maze 
-* It gets regenerated every 60 seconds
-* Draw a ``2px`` line from start left top to end right bottom
-* The space inside one cell is ``16 x 16 px``
-* Use the number of your group as a offset for the lines.
-* Color of the start patch: ``#00FFFF``
-* Color of the finish patch: ``#FF00FF``
+.. image:: images/P-Assistant-6.svg
+   :class: big
+
+Systemübersicht
+---------------
+
+* Anwesenheitserkennung per nmap
+
+.. note::
+
+  * Anwesenheitserkennung für Rechner und Telefon per nmap (Automatisierung usw.)
+
+----
+
+.. image:: images/P-Assistant-7.svg
+   :class: big
+
+Systemübersicht
+---------------
+
+* Raspberry Pi Zero als Bluetooth Brücke
+* Bluethooth Heizungsthermostat
+
+.. image:: images/eq3.png
+   :class: inline
+   :height: 140px
+
+* Bluethooth Raumthermostat
+
+.. image:: images/Mijia.jpg
+   :class: inline
+   :height: 140px
+
+
+.. note::
+
+  * Pi Zero eigentl. Sprachsteuerung, jetzt Bluetooth Brücke
+
+    * Heizungstermostat
+    * Xiaomi Raumtermostate
+
+----
+
+.. image:: images/P-Assistant-all.svg
+   :class: big
+
+Systemübersicht
+---------------
+
+* Weitere Netzwerkgeräte
+
+  * Wlan Radio
+  * Drucker
+  * NAS
+
+.. note::
+
+  * Zusätzlich eingebunden:
+
+    * Wlan Radio (Audio Ausgabe TBD)
+    * Drucker (Monitoring)
+    * NAS (Backup)
 
 ----
 
 :data-x: r2400
 :data-y: r0
 
-.. image:: images/server.png
+.. image:: images/Dashboard.gif
 
-Challenge - Server
-------------------
+Lovelace UI
+-----------
 
-* IP: ``10.201.77.102``
-* Port: ``1234``
+* Standard Oberfläche
+* Schnelle Übersicht
+* Führt Aktionen aus
 
-Playground - Server
--------------------
+|local_ha_demo|
 
-* IP: ``10.201.77.104``
-* Port: ``1234``
+.. |local_ha_demo| raw:: html
 
-----
+   <a href="https://p-assist.fritz.box:8123/lovelace/home" target="_blank">Livedemo</a>
 
-:id: areas
+.. note::
+    Zeigen:
 
-.. image:: images/areas.png
+    * Dashboard
+    * Lichter 
+    * Klima
+    * Geräte
+    * Raspis
 
-Areas
------
-
-* The canvas is split into 9 equal areas
-* Each group canvas therefore is ``(3840 / 3) x (2160 / 3)``
-* Each group canvas is split into four challenge areas.
-* On the sides of each area is a ``1px`` border.
+   -Strg-W zurück
 
 ----
 
-.. image:: images/rules.jpg
-   :height: 600px
+.. image:: images/Addons.png
 
-Rules
------
+Home Assistant Addons
+---------------------
 
-* Only use the group area of your team.
-* There is a ``1px`` border around your group area. Don't overwrite it.
-* Open one TCP connection per machine and reuse it!
-* Please speak to us when the first four challenges are solved and you are starting the maze. We will color your area green, when solved.
+* Erweiterungen für den Home Assistant Supervisor
+* Unabhängige Programme
+* "Alles was in einem eigenen Prozess läuft ist ein Addon"
+* spezielle Dockercontainer
+* Werden über den Addon-Store installiert
 
-----
+.. note::
 
-.. image:: images/questions.jpg
+  Addons-Bsp:
 
-Questions
----------
-
-Any questions so far?
-
-----
-
-.. image:: images/rewards.jpg
-   :height: 300px
-
-Reward
-------
-
-The first Team which completes the 4 animated challenges and draws a line through the maze wins.
+  * Node-Red für Automatisierung
+  * ICantBelieveItsNotValetude Kartenbild vom Robo
+  * AdGuard Home für Adblock und DNS-over-HTTPS
 
 ----
 
-.. image:: images/groups.jpg
+:data-x: r0
+:data-y: r1200
 
-Grouping
+.. image:: images/AdguardHome.png
+
+AdGuard Home
+------------
+
+* Ersetzt DNS Service des Routers
+* Adblocker
+
+  * Alle Domains der Blockierlisten werden nicht aufgelöst
+  * Werbeanfragen und IoT-Heimtelefonierer offline
+
+
+* Anfragen an verschiedene öffentliche DNS Provider
+
+
+* Unterstützung für DNS-over-TLS und DNS-over-HTTPS
+  
+  * Namensauflösung kann nicht "mitgeschnitten" werden.
+  * Namensauflösung kann nicht von "normalen" HTTP Anfragen unterschieden werden (DoH).
+
+|local_adguard_demo|
+
+.. |local_adguard_demo| raw:: html
+
+   <a href="https://p-assist.fritz.box:8123/a0d7b954_adguard" target="_blank">Livedemo</a>
+
+.. note::
+
+    * DNS
+
+      * DNS: google.de auflösen -> 216.58.207.131 -> Anfrage zu IP
+
+    * Anfragen an verschiedene öffentliche DNS Provider
+
+      * Streuung der Anfragen falls gewünscht
+      * Ausfallsicherheit für Namensauflösung
+
+    * Unterstützung für DNS-over-TLS und DNS-over-HTTPS    
+
+    Zeigen:
+
+    * Allgemeine Settings
+    * Filterliste
+    * DNS Settings
+
+   -Strg-W zurück
+
+----
+
+.. image:: images/node-red.png
+
+Node-Red
 --------
 
-We would like you to form groups with 2-3 people.
+* Automatisierungen als Logik-Abläufe
+* Integration in Home Assistant
 
-Colorcodes for the maze:
+|local_node-red_demo|
 
-1. ``#ff0000``
-2. ``#00ff00``
-3. ``#0000ff``
-4. ``#ffff00``
-5. ``#c0c0c0``
-6. ``#ff0000``
-7. ``#808000``
-8. ``#800080``
+.. |local_node-red_demo| raw:: html
 
-Slides:
-https://github.com/HacktoberfestMunich/Pixelflut/blob/master/presentation/intro.rst
+   <a href="https://p-assist.fritz.box:8123/a0d7b954_nodered" target="_blank">Livedemo</a>
+
+.. note::
+
+    Zeigen:
+
+    * Sensor anbinden und Aktion ausführen
+    * Dusty Fehlermeldungen
+
+   -Strg-W zurück
+
+----
+
+.. image:: images/Grafana.png
+
+Grafana
+-------
+
+* Sensorenwerte und Zustände zusätzlich in InnoDb gespeichert
+
+  * Optimierte Aufbewahrung in Zeitreihendatenbank
+
+* Grafana für die Auswertung
+
+  * "Bunte Balken und Zahlen"
+  * Auswertung über längere Zeitabschnitte
+
+|local_grafana_demo|
+
+.. |local_grafana_demo| raw:: html
+
+   <a href="https://p-assist.fritz.box:8123/a0d7b954_grafana" target="_blank">Livedemo</a>
+
+.. note::
+
+    * Adblocker über DNS
+
+      * DNS: google.de auflösen -> 216.58.207.131 -> Anfrage zu IP
+
+    * Anfragen an verschiedene öffentliche DNS Provider
+
+      * Streuung der Anfragen falls gewünscht
+      * Ausfallsicherheit für Namensauflösung
+
+    * Unterstützung für DNS-over-TLS und DNS-over-HTTPS    
+
+    Zeigen:
+
+    * Allgemeine Settings
+    * Filterliste
+    * DNS Settings
+
+   -Strg-W zurück
+
+----
+
+.. image:: images/github-config.png
+
+Home Assistant Git Exporter
+---------------------------
+
+* Exportiert die aktuelle Konfiguration in ein beliebiges Git Repository
+* Exportiert auch Konfigurationen von einigen Addons
+* Prüft auf Passwörter und sensible Daten in den Konfigurationen
+
+Sourcecode und Installation des Addons auf GitHub:
+
+.. image:: images/exporter-qr.svg
+   :class: inline
+   :height: 180px
+
+----
+
+:data-x: r2400
+:data-y: r0
+
+.. image:: images/end.jpg
+
+Fragen?
+-------
+
+und
+
+The End?
+--------
+
