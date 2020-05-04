@@ -28,10 +28,10 @@ Agenda
   * Lovelace Oberfläche
   * Home Assistant Addons
 
-      * AdGuard Home
-      * Node-Red
-      * Grafana
-      * Home Assistant Git Exporter
+    * AdGuard Home
+    * Node-Red
+    * Grafana
+    * Home Assistant Git Exporter
 
 ----
 
@@ -396,6 +396,10 @@ Sourcecode und Installation des Addons auf GitHub:
    :class: inline
    :height: 180px
 
+.. note::
+
+  * Check Apikeys, Passwörter ...
+
 ----
 
 :data-x: r2400
@@ -403,11 +407,6 @@ Sourcecode und Installation des Addons auf GitHub:
 
 .. image:: images/end.jpg
 
-Fragen?
--------
-
-und
-
-The End?
---------
+Auf zur Gesprächsrunde
+----------------------
 

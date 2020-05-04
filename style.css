@@ -69,11 +69,12 @@ ul,ol,dl {
 }
 
 li {
-    margin-bottom: .2ex;
+    margin-bottom: .7ex;
 }
 
 li > ul {
-    margin-bottom: .5ex;
+    margin-top: 1ex;
+    margin-bottom: 1ex;
 }
 
 img {
