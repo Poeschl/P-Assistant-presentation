@@ -400,13 +400,7 @@ Sourcecode und Installation des Addons auf GitHub:
 
   * Check Apikeys, Passwörter ...
 
-----
+  Kontakt oder Github über die Webseite 
 
-:data-x: r2400
-:data-y: r0
-
-.. image:: images/end.jpg
-
-Auf zur Gesprächsrunde
-----------------------
+  => Mein Part zu Ende wir holen jetzt Sven wieder
 
